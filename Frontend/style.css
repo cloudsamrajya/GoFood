@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-bar {
+  /* background-color: #dfe6e9; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigation-bar img {
+  margin: 10px 0 10px 10px;
+}
+.nav-buttons {
+  margin-right: 20px;
+  display: flex;
+  /* background-color: green; */
+  gap: 30px;
+}
+.btn-cart {
+  border: none;
+  font-size: 20px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn-login {
+  border: none;
+  color: white;
+  background-color: #d63031;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 10px;
+}
+#logo-gofood {
+  cursor: pointer;
+}
+.btn-cart:hover {
+  background-color: #718093;
+  color: white;
+  border: none;
+}
+.section-2 {
+  height: 50vh;
+  background-color: #c44569;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar {
+  width: 70%;
+  border: none;
+  height: 8vh;
+  outline: none;
+  font-size: 20px;
+  font-family: monospace;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.btn-search {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  border: none;
+  width: 30%;
+  height: 8vh;
+  background-color: #1e272e;
+  color: white;
+}
+.search-container {
+  border-radius: 5px;
+  display: flex;
+  width: 60%;
+  overflow: hidden;
+}
+.featured-product {
+  background-color: red;
+  padding: 20px;
+}
+.product-container {
+  width: 80%;
+  height: 30vh;
+  background-color: yellow;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
