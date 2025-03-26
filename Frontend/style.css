@@ -5,6 +5,7 @@
 
 .navigation-bar {
   /* background-color: #dfe6e9; */
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,13 +79,61 @@
   overflow: hidden;
 }
 .featured-product {
-  background-color: red;
-  padding: 20px;
+  /* background-color: red; */
+  padding-top: 15px;
+  width: 100%;
+  height: auto;
 }
 .product-container {
   width: 80%;
-  height: 30vh;
-  background-color: yellow;
+  /* background-color: yellow; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  /* gap: 10px; */
+  margin: 0px auto;
+}
+.featured-img {
+  height: 100%;
+  width: 100%;
+}
+.featured-product-div {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+
+  height: 410px;
+  width: 360px;
+  /* background-color: green; */
+  /* border: 3px solid black; */
+}
+.featured-product-div-img {
+  /* background-color: aqua; */
+  height: 330px;
+  width: 330px;
+}
+.featured-product-div-title {
+  /* background-color: black; */
+  width: 330px;
+  height: 60px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-3 {
+  background-color: red;
+}
+.section-3-banner img {
+  width: 100%;
+  height: 328px;
+}
+.section-3-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.section-3-about {
+  background-color: red;
+  position: absolute;
 }
