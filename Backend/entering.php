@@ -20,7 +20,6 @@ if(isset($_POST['submit'])){
         }
         else{
             $_SESSION['login_error'] = 'Incorrect email or password';
-            echo 'Incorrect password';
             header('location: loginform.php');
             exit();
         }
@@ -28,7 +27,6 @@ if(isset($_POST['submit'])){
     else{
         $_SESSION['login_error'] = 'Incorrect email or password';
 
-        echo 'Incorrect Username or Password';  ///problem here
         header('location: loginform.php');
             exit();
     }

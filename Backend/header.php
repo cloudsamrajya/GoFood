@@ -1,3 +1,4 @@
+
 <?php
 $isLoggedIn = isset($_SESSION['user_id']);
 ?>
@@ -13,7 +14,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
       <nav class="nav-buttons">
         <button class="btn-cart"><i class="bi bi-cart3"></i></button>
         <?php if(!$isLoggedIn): ?>
-        <button class="btn-login">Login</button>
+        <button class="btn-login" onclick="openmodal()">Login</button>
         <?php else:   ?>
         <button class="btn-logout" style="border: none;
   color: white;
@@ -27,14 +28,12 @@ $isLoggedIn = isset($_SESSION['user_id']);
       </nav>
     </section>
     <script>
-       const loginBtn = document.querySelector('.btn-login');
-       const body = document.querySelector('body');
-    if(loginBtn) {
-        loginBtn.addEventListener('click', () => {
-            window.location.href = 'loginform.php';
-            
-        });
-    }
+      // const modalcontainer =  document.querySelector('modalcontainer');
+      // function openmodal(){
+      //   modalcontainer.classList.add('open_modal');
+      // }
+      
+   
     const logoutBtn = document.querySelector('.btn-logout');
     if(logoutBtn) {
         logoutBtn.addEventListener('click', () => {
