@@ -184,6 +184,7 @@
     <div class='modalcontainer'>
         <!-- modal child -->
         <div class="logincontainer">
+          
             
             <!-- logincontainer  child --->
             <!--- form --->
@@ -208,6 +209,11 @@
 <div class="col-auto mt-3">
     <button type="submit" name="submit" class="btn btn-primary mb-3 mx-auto d-block " style="width: 80%;">Login</button>
   </div>
+ <!--  If the login credentials are incorrect  it moves to same page  --->
+ <?php if(isset($_SESSION['login_error'])): ?>
+        <p style="color: red;"><?= $_SESSION['login_error'] ?></p>
+    <?php endif; ?> 
+<!--  End of login credentials section  --->
        
     </form>
         </div>
@@ -236,6 +242,19 @@
             modalcontainer.classList.remove('open_modal');
             document.body.classList.remove('modal-open');
           }
+          <?php 
+    $shouldAutoOpen = isset($_SESSION['login_error']);
+    if ($shouldAutoOpen) {
+        unset($_SESSION['login_error']); // Clear it immediately after checking
+    }
+    ?>
+    
+    // Then this JavaScript runs with the value from PHP
+    document.addEventListener('DOMContentLoaded', function() {
+        <?php if ($shouldAutoOpen): ?>
+            openmodal();
+        <?php endif; ?>
+    });
 
        
          </script>

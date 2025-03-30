@@ -11,7 +11,9 @@
   
  
 </head>
+
 <body>
+    <div class="login-form-container">
     <h1>Login</h1>
 <!--  If the login credentials are incorrect  it moves to same page  --->
     <?php if(isset($_SESSION['login_error'])): ?>
@@ -31,6 +33,6 @@
 
 
 
-
+    </div>
 </body>
 </html>
