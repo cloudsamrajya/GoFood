@@ -144,9 +144,10 @@
         }
         .logincontainer{
          
-            height: 70%;
+            height: 80%;
             width: 30%;
             border-radius: 5px;
+            background-color: white;
             
            
            
@@ -155,7 +156,7 @@
         .logincontainer form{
             /* background-color: red; */
             
-        height: 100%;   
+        height: 80%;   
         width: 100%;
         padding: 30px;
         background-color: white;
@@ -176,6 +177,10 @@
         cursor: pointer;
 
 
+        }
+        .register-div{
+          text-align: center;
+          margin-top: 1.3rem;
         }
 
      </style>
@@ -214,8 +219,13 @@
         <p style="color: red;"><?= $_SESSION['login_error'] ?></p>
     <?php endif; ?> 
 <!--  End of login credentials section  --->
-       
+
+
     </form>
+    <!---register here -->
+      <div class="register-div">
+     <span>Don't have an account?</span> <a href="form.php" >Register here</a>
+      </div>
         </div>
 
     </div>
