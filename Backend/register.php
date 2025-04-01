@@ -12,9 +12,12 @@ if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($
 try{
 
 $insert_user =  $conn -> prepare("INSERT INTO `user`(name, email, phone, address, password) VALUES(?,?,?,?,?)");
-$insert_user -> execute([$name, $email, $phone, $address, $password]);
-echo "Data inserted successfully";
+$success = $insert_user -> execute([$name, $email, $phone, $address, $password]);
+if($success){
+header('location: index.php');}
+
 }
+
 catch(PDOException $e){
     echo "Error on inserting data".$e->getMessage();
 }

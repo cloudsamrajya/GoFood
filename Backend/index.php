@@ -224,7 +224,7 @@
     </form>
     <!---register here -->
       <div class="register-div">
-     <span>Don't have an account?</span> <a href="form.php" >Register here</a>
+     <span>Don't have an account?</span> <a href="form.php" target="_blank" >Register here</a>
       </div>
         </div>
 
