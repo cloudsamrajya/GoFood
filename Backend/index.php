@@ -1,3 +1,4 @@
+<?php include '../DB/connect.php' ?>
 <?php session_start();
 
  ?>
@@ -29,26 +30,31 @@
       <span style="display: flex; justify-content: center"
         ><h2>Deals of the day</h2></span
       >
+      <?php $restaurants = $conn-> query("SELECT * FROM restaurant") -> fetchAll() ?>
+
       <div class="product-container">
-        <div class="featured-product-div">
+        <?php foreach($restaurants as $r): ?>
+        <div class="featured-product-div" style="cursor: pointer;">
           <div class="featured-product-div-img">
             <img
               class="featured-img"
-              src="https://apps.pokharafooddelivery.com/assets/img/slider/1742374891TmEZBxKvLp.png"
+              src="<?php echo $r['image']; ?>"
               alt=""
             />
           </div>
-          <div class="featured-product-div-title">Momo</div>
+          <div class="featured-product-div-title"><?php echo $r['name'] ?></div>
         </div>
-        <div class="featured-product-div">
+        <?php endforeach ?>
+
+        <!-- <div class="featured-product-div">
           <div class="featured-product-div-img">
             <img
               class="featured-img"
-              src="https://apps.pokharafooddelivery.com/assets/img/slider/1727242147e9gnefTc2H.jpeg"
+              src="https://www.creativefabrica.com/wp-content/uploads/2019/10/30/1572425829/Daddys-Kitchen-580x386.jpg"
               alt=""
             />
           </div>
-          <div class="featured-product-div-title">Momo</div>
+          <div class="featured-product-div-title">Daddy's Kitchen</div>
         </div>
         <div class="featured-product-div">
           <div class="featured-product-div-img">
@@ -89,7 +95,7 @@
             />
           </div>
           <div class="featured-product-div-title">Momo</div>
-        </div>
+        </div> -->
       </div>
     </main>
     <section class="section-3">
