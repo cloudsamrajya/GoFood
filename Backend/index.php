@@ -30,19 +30,21 @@
       <span style="display: flex; justify-content: center"
         ><h2>Deals of the day</h2></span
       >
-      <?php $restaurants = $conn-> query("SELECT * FROM restaurant") -> fetchAll() ?>
+      <?php $restaurants = $conn-> query("SELECT * FROM restaurant") -> fetchAll() ?>  <!-- restaurants   -->
 
       <div class="product-container">
         <?php foreach($restaurants as $r): ?>
-        <div class="featured-product-div" style="cursor: pointer;">
-          <div class="featured-product-div-img">
+        <div class="featured-product-div" >
+          <a class="anchor"  href="restaurant.php?restaurant_id=<?php echo $r['restaurant_id']; ?>">
+          <div class="featured-product-div-img" style="cursor: pointer;">
             <img
               class="featured-img"
               src="<?php echo $r['image']; ?>"
               alt=""
             />
           </div>
-          <div class="featured-product-div-title"><?php echo $r['name'] ?></div>
+          <div class="featured-product-div-title" style="cursor: pointer;"><?php echo $r['name'] ?></div>
+          </a>
         </div>
         <?php endforeach ?>
 

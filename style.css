@@ -174,3 +174,18 @@
 .row {
   width: 100%;
 }
+.table-container {
+  height: auto;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+}
+.tbl {
+  border: 1px solid black;
+
+  width: 80%;
+}
+.anchor {
+  text-decoration: none;
+  color: black;
+}
