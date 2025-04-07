@@ -181,11 +181,36 @@
   justify-content: center;
 }
 .tbl {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 
-  width: 80%;
+  width: 100%;
+  margin: 20px 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
 }
 .anchor {
   text-decoration: none;
   color: black;
+}
+.tbl th {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 15px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.tbl tr:hover {
+  background-color: #fff8f8;
+  transform: scale(1.01);
+}
+.tbl td {
+  padding: 12px 25px;
+}
+.tbl tr {
+  transition: all 0.3s ease;
+}
+.tbl tr.no-hover {
+  transform: none;
 }
