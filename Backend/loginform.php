@@ -1,3 +1,4 @@
+<!-- you page ko kam xaina -->
 <?php session_start(); ?>
 
 <!DOCTYPE html>

@@ -4,7 +4,7 @@
 $isLoggedIn = isset($_SESSION['user_id']);
 ?>
 <section class="navigation-bar">
-      <a href="#">
+      <a href="index.php">
         <img
           id="logo-gofood"
           src="../Images/Logo5.png"

@@ -1,5 +1,23 @@
+<?php session_start() ?> 
 <?php include '../DB/connect.php' ?>
 <?php include 'header.php' ?>
+<?php if(!isset($_SESSION['user_id'])) {
+    $_SESSION['message'] = 'Login First';
+    header("Location:index.php ");
+
+
+    exit();
+} ?>
+<?php
+//for current cart count
+$cartCount = 0;
+$stmt = $conn -> prepare('SELECT COUNT(*) FROM order_tbl WHERE user_id = ? AND status = "cart" ');
+$stmt -> execute([$_SESSION['user_id']]);
+$cartCount = $stmt -> fetchColumn();
+ ?>
+
+
+
 <?php 
 $restaurant_food_item = [];
 if(isset($_GET['restaurant_id'])){
@@ -34,7 +52,7 @@ $restaurant_food_item = $stmt -> fetchAll();
             <td><?php echo $r_f_i['name']?></td>
             <td><?php echo $r_f_i['price'] ?></td>
             <td><span style="color: <?php echo ($r_f_i['availability']=='Available') ? '#2ecc71':'#e74c3c' ?> "><?php echo $r_f_i['availability'] ?></span>  </td>
-            <td onclick="cart.php"><i class="bi bi-plus-lg"></i></td> <!--- yeta bata suru -->
+            <td ><a href="cart.php?food_id=<?php echo $r_f_i['food_id'] ?>"><i class="bi bi-plus-lg"></i></a></td> 
         </tr>
         <?php endforeach ?>
         

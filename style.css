@@ -91,6 +91,7 @@
   width: 100%;
   height: auto;
 }
+
 .product-container {
   width: 80%;
   /* background-color: yellow; */
@@ -100,6 +101,7 @@
   margin: 0px auto;
 }
 .featured-img {
+  object-fit: cover;
   height: 100%;
   width: 100%;
 }
@@ -213,4 +215,9 @@
 }
 .tbl tr.no-hover {
   transform: none;
+}
+.tbl button {
+  outline: none;
+  border: none;
+  background: transparent;
 }

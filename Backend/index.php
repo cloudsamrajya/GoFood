@@ -1,6 +1,14 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <?php include '../DB/connect.php' ?>
 <?php session_start();
-
+if(isset($_SESSION['message'])){
+  echo "<script>
+  $(document).ready(function(){
+  alert('".$_SESSION['message']."')
+  })
+  </script>";
+  unset($_SESSION['message']);
+}
  ?>
 <html>
     <head>
