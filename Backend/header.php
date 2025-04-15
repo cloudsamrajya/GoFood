@@ -1,5 +1,14 @@
 <link rel="stylesheet" href="../style.css">
+<style>
+  
+  #cart-count{
+    right: 100px;
+    top: 20px;
 
+
+
+  }
+</style>
 <?php
 $isLoggedIn = isset($_SESSION['user_id']);
 ?>
@@ -13,7 +22,28 @@ $isLoggedIn = isset($_SESSION['user_id']);
         />
       </a>
       <nav class="nav-buttons">
-        <button class="btn-cart"><i class="bi bi-cart3"></i></button>
+        <button class="btn-cart position relative"><i class="bi bi-cart3"></i>
+      <?php if($isLoggedIn): ?>
+        <span id="cart-count" class="position-absolute  translate-middle badge rounded-pill bg-danger">
+        <?php 
+        $stmt = $conn -> prepare("SELECT COUNT(*) FROM order_items oi JOIN order_tbl o ON oi.order_id = o.order_id WHERE o.user_id = ? AND o.status = 'cart'");
+        $stmt -> execute([$_SESSION['user_id']]); 
+        ///we did this because current user id should be passed because if others passed it will be not be right
+        echo $stmt -> fetchColumn()
+
+        ?>
+
+        </span>
+       
+          <?php endif; ?>
+      
+      
+      
+      
+      
+      
+      </button>
+         
         <?php if(!$isLoggedIn): ?>
         <button class="btn-login" onclick="openmodal()">Login</button>
         <?php else:   ?>
