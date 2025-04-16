@@ -21,8 +21,19 @@ $isLoggedIn = isset($_SESSION['user_id']);
           alt="Brand_logo"
         />
       </a>
+
+
       <nav class="nav-buttons">
-        <button class="btn-cart position relative"><i class="bi bi-cart3"></i>
+        <button onclick="<?php if($isLoggedIn): ?> window.location.href='orders.php'
+        <?php else: ?>
+          openmodal()
+        
+        <?php endif;?>
+        
+        
+        
+        
+        " class="btn-cart position relative" ><i class="bi bi-cart3"></i> 
       <?php if($isLoggedIn): ?>
         <span id="cart-count" class="position-absolute  translate-middle badge rounded-pill bg-danger">
         <?php 
