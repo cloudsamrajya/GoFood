@@ -6,7 +6,7 @@ $phone = $_POST['phone'];
 $address = $_POST['address'];
 $password = $_POST['password'];
 if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($password)) {
-    echo "All fie0lds are required.";
+    echo "All fields are required.";
     exit();
 }
 try{

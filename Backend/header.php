@@ -24,11 +24,15 @@ $isLoggedIn = isset($_SESSION['user_id']);
 
 
       <nav class="nav-buttons">
+
+      
+        <!-- <code1> -->
         <button onclick="<?php if($isLoggedIn): ?> window.location.href='orders.php'
         <?php else: ?>
           openmodal()
         
         <?php endif;?>
+        // </code1>
         
         
         
