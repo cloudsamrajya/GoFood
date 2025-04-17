@@ -43,7 +43,6 @@ if($order){
                                         </div>
                                     </div>
                                 </div>
-                                <?php endforeach; endif; ?>
                         </div>
                         
 
