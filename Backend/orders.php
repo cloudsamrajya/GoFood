@@ -1,17 +1,27 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <?php
 session_start();
+if(!isset($_SESSION['user_id'])){
+    header('location: index.php');
+    exit();
+}
 include '../DB/connect.php';
 include 'header.php';
-
+try{
 $stmt = $conn -> prepare("SELECT order_tbl.*, restaurant.name as restaurant_name FROM order_tbl JOIN restaurant ON order_tbl.restaurant_id = restaurant.restaurant_id WHERE order_tbl.user_id =? AND order_tbl.status = 'cart'");
 $stmt -> execute([$_SESSION['user_id']]);
 $order = $stmt -> fetch();
 
 $orderItems = [];
 if($order){
-    $stmt = $conn -> prepare(" SELECT order_items.*, food_item.name as food_name FROM order_items JOIN food_item ON order_items.food_id = food_item.food_id WHERE order_items.order_id = ?  ");
+    $stmt = $conn -> prepare(" SELECT order_items.*, food_item.name as food_name FROM order_items JOIN food_item ON order_items.food_id = food_item.food_id WHERE order_items.order_id =?");
     $stmt -> execute([$order['order_id']]);
     $orderItems = $stmt -> fetchAll();
+}
+}
+catch(PDOException $e){
+    error_log('database error:' .$e->getMessage());
+    die('An error occured while loading your order. Please try again later');
 }
 ?>
 <div class="container py-5">
@@ -44,7 +54,7 @@ if($order){
                                     </div>
                                     <div class="col-md-3 text-end">
                                         <p class="fw-bold">Rs.<?php echo number_format($item['price'] * $item['quantity'], 2); ?></p>
-                                        <button class="btn btn-sm btn-outline-danger remove-item" data-items-id ="<?php echo $item['order_item_id'] ?>">
+                                        <button class="btn btn-sm btn-outline-danger remove-item" data-item-id ="<?php echo $item['order_item_id'] ?>">
                                             <i class="bi bi-trash"></i>
                                         </button>
                                     </div>
@@ -90,14 +100,21 @@ if($order){
                 url: 'update_cart.php',
                 method: 'POST',
                 data: {
-                    item_id: itemID,
+                    item_id: itemId,
                     action: action
                 },
                 success: function(response){
                     if(response.success){
                         location.reload();
                     }
+                    else {
+                    alert(response.message || 'Error updating quantity');
                 }
+                },
+                error: function(xhr, status, error) {
+                console.error("Error:", error);
+                alert("An error occurred. Please try again.");
+            }
             });
         
     });
@@ -116,6 +133,13 @@ if($order){
                     if(response.success){
                         location.reload();
                     }
+                    else {
+                        alert(response.message || 'Error removing item');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error:", error);
+                    alert("An error occurred. Please try again.");
                 }
             });
         }
