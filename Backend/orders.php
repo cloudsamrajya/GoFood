@@ -42,14 +42,90 @@ if($order){
                                             
                                         </div>
                                     </div>
+                                    <div class="col-md-3 text-end">
+                                        <p class="fw-bold">Rs.<?php echo number_format($item['price'] * $item['quantity'], 2); ?></p>
+                                        <button class="btn btn-sm btn-outline-danger remove-item" data-items-id ="<?php echo $item['order_item_id'] ?>">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
                                 </div>
+                                <hr>
+                                <?php endforeach; ?>
                         </div>
-                        
-
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Order Summary</h5>
+                            <hr>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Subtotal:</span>
+                                <span>Rs.<?php echo number_format($order['total_price'], 2); ?></span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Delivery Fee:</span>
+                                <span>Rs.100</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between fw-bold mb-4">
+                                <span>Total:</span>
+                                <span>Rs.<?php echo number_format($order['total_price'] + 100, 2) ?></span>
+                            </div>
+                            <button class="btn btn-primary w-100 btn-lg checkout-btn">Proceed to Checkout</button>
+                        </div>
                     </div>
                 </div>
             </div>
+            <?php endif;?>
 </div>
+<script>
+    ///for updating the qunatities in orders.php 
+    $(document).ready(function(){
+        $('.update-quantity').click(function(){
+            const itemId = $(this).data('item-id');
+            const action = $(this).data('action');
+
+            $.ajax({
+                url: 'update_cart.php',
+                method: 'POST',
+                data: {
+                    item_id: itemID,
+                    action: action
+                },
+                success: function(response){
+                    if(response.success){
+                        location.reload();
+                    }
+                }
+            });
+        
+    });
+    $('.remove-item').click(function(){
+        if(confirm('Are you sure you want to remove this item?')){
+            const itemId = $(this).data('item-id');
+
+            $.ajax({
+                url: 'update_cart.php',
+                method: 'POST',
+                data: {
+                    item_id: itemId,
+                    action: 'remove'
+                },
+                success: function(response){
+                    if(response.success){
+                        location.reload();
+                    }
+                }
+            });
+        }
+    });
+    $('.checkout-btn').click(function(){
+        ///checkout process
+
+    });
+    });
+</script>
 
 
 
