@@ -16,6 +16,7 @@ if(isset($_SESSION['message'])){
         Home Page
     </title>
     </head>
+    <link rel="stylesheet" href="../style.css">
     <body>
         <!-- Menu section starts -->
     
@@ -27,11 +28,13 @@ if(isset($_SESSION['message'])){
 
 
         <!-- Main content section starts -->
-        <section class="section-2">
+        <section class="section-2 ">
       <img style="width: 100%; height: 50vh" src="../Images/banner3.jpg" alt="" />
       <div class="search-container">
-        <input type="text" class="search-bar" placeholder="Food or Cuisine" />
+        <form method="GET" action="search.php" class="search-form">
+        <input type="text" name="query" class="search-bar" placeholder="Food or Restaurant" />
         <button class="btn-search">Search</button>
+        </form>
       </div>
     </section>
     <main class="featured-product">

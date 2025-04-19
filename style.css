@@ -85,6 +85,10 @@
   overflow: hidden;
   position: absolute;
 }
+.search-form {
+  width: 100%;
+  display: flex;
+}
 .featured-product {
   /* background-color: red; */
   padding-top: 15px;

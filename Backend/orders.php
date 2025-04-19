@@ -82,7 +82,7 @@ catch(PDOException $e){
                                 <span>Total:</span>
                                 <span>Rs.<?php echo number_format($order['total_price'] + 100, 2) ?></span>
                             </div>
-                            <button class="btn btn-primary w-100 btn-lg checkout-btn">Proceed to Checkout</button>
+                            <button class="btn btn-primary w-100 btn-lg checkout-btn">Checkout</button>
                         </div>
                     </div>
                 </div>
