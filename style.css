@@ -176,6 +176,9 @@
 .exception {
   width: 300px;
 }
+.exception2 {
+  min-width: 170px;
+}
 
 .row {
   width: 100%;

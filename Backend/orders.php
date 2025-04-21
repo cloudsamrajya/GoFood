@@ -27,7 +27,7 @@ catch(PDOException $e){
 <div class="container py-5">
     <h1 class="mb-5">Your Order</h1>
     <?php if(!$order): ?>
-        <div class="alert alert-info">Your cart is empty</div>
+        <div class="alert alert-info d-flex justify-content-between">Your cart is empty <a href="index.php"><span>Continue Browsing</span></a></div>
         <?php else: ?>
             <div class="row">
                 <div class="col-lg-8">
@@ -146,6 +146,31 @@ catch(PDOException $e){
     });
     $('.checkout-btn').click(function(){
         ///checkout process
+        if(confirm('Confirm your order')){
+            $.ajax({
+                url: 'process_checkout.php',
+                method: 'POST',
+                data: {
+                    order_id: <?php echo $order['order_id']; ?>
+                },
+                dataType: 'json',
+                success: function(response){
+                    if(response.success){
+                        ///it redirects to order_confirmation.php
+                        window.location.href = 'order_confirmation.php?order_id=' + response.order_id;
+                    }
+                    else{
+                        alert(response.message || 'Error processing your order');
+                    }
+                },
+                error: function(xhr, status, error){
+                    console.error("Error:", error);
+                    alert("An error occurred. Please try again.");
+                }
+
+                
+            })
+        }
 
     });
     });

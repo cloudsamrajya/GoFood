@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="col-child">
+            <div class="col-child exception2 ">
               <h6>CONNECT WITH US</h6>
               <li>facebook</li>
               <li>instagram</li>
