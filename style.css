@@ -1,268 +1,207 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Base Styles */
-body {
-  overflow-x: hidden;
-}
-
-/* Navigation Styles */
 .navigation-bar {
+  /* background-color: #dfe6e9; */
   background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   top: 0%;
   z-index: 1;
+
   position: sticky;
-  padding: 0 15px;
-  width: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 .navigation-bar img {
-  margin: 10px 0;
-  max-height: 50px;
-  width: auto;
+  margin: 10px 0 10px 10px;
 }
-
 .nav-buttons {
+  margin-right: 20px;
   display: flex;
-  gap: 15px;
+  /* background-color: green; */
+  gap: 30px;
 }
-
 .btn-cart {
-  border: 1px solid black;
-  padding: 8px 12px;
-  font-size: 16px;
-  border-radius: 5px;
+  border: none;
+  font-size: 20px;
   background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  cursor: pointer;
 }
-
 .btn-login {
   border: none;
   color: white;
   background-color: #d63031;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 5px;
-  padding: 8px 12px;
-  cursor: pointer;
+  padding: 10px;
 }
-
 #logo-gofood {
   cursor: pointer;
 }
-
 .btn-cart:hover {
   background-color: #718093;
   color: white;
   border: none;
 }
-
-/* Banner Section */
 .section-2 {
-  height: auto;
-  width: 100%;
+  height: 50vh;
+  /* background-color: #c44569; */
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
-
-.banner-image {
-  width: 100%;
-  height: 50vh;
-  object-fit: cover;
-}
-
 .search-bar {
   width: 70%;
   border: none;
-  height: 50px;
+  height: 8vh;
   outline: none;
-  font-size: 16px;
-  padding: 0 20px;
+  font-size: 20px;
+  font-family: monospace;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-
 .btn-search {
-  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
   border: none;
   width: 30%;
-  height: 50px;
+  height: 8vh;
   background-color: #1e272e;
   color: white;
-  cursor: pointer;
 }
-
 .search-container {
   border-radius: 5px;
   display: flex;
-  width: 80%;
-  max-width: 800px;
+  width: 60%;
   overflow: hidden;
   position: absolute;
 }
-
 .search-form {
   width: 100%;
   display: flex;
 }
-
-/* Featured Products Section */
 .featured-product {
-  padding: 30px 15px;
+  /* background-color: red; */
+  padding-top: 15px;
   width: 100%;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 20px;
+  height: auto;
 }
 
 .product-container {
   width: 80%;
-  max-width: 1200px;
+  /* background-color: yellow; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin: 0 auto;
+  /* gap: 10px; */
+  margin: 0px auto;
 }
-
-/* Fixed the image display to match original style */
 .featured-img {
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
-
 .featured-product-div {
   display: flex;
-  flex-direction: column;
-  height: 410px;
-  width: 100%;
-  max-width: 360px;
-  margin: 0 auto;
+  flex-wrap: wrap;
   padding: 10px;
-}
 
+  height: 410px;
+  width: 360px;
+  /* background-color: green; */
+  /* border: 3px solid black; */
+}
 .featured-product-div-img {
+  /* background-color: aqua; */
   height: 330px;
   width: 330px;
-  max-width: 100%;
-  margin: 0 auto;
 }
-
 .featured-product-div-title {
+  /* background-color: black; */
   width: 330px;
-  max-width: 100%;
   height: 60px;
-  margin: 0 auto;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
 }
-
-/* About Section */
 #banner1 {
   width: 100%;
-  height: auto;
-  max-height: 50vh;
-  object-fit: cover;
+  /* position: absolute; */
+  height: 50vh;
 }
 
 .section-3-about {
-  padding: 20px;
-  width: 100%;
-  max-width: 600px;
+  height: 72px;
+  width: 450px;
   position: absolute;
   top: 50%;
-  left: 10%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
+  left: 50%;
+  transform: translate(-80%, -150%);
 }
-
-.section-3-about p {
-  font-size: 1rem;
-  margin-bottom: 15px;
-}
-
 .section-3-container {
   position: relative;
-  width: 100%;
-  overflow: hidden;
+  /* background-color: red; */
+  max-height: auto;
 }
-
 .section-3 {
-  padding: 30px 0;
+  padding-top: 20px;
 }
-
-/* Footer Section */
 .section-footer {
-  padding: 30px 15px;
-  background-color: #f8f9fa;
+  /* background-color: red; */
+  padding-top: 30px;
 }
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .footer-container li {
   list-style-type: none;
-  margin-bottom: 10px;
 }
-
 .col {
-  flex: 1;
-  min-width: 200px;
-  margin: 15px 0;
+  /* border: 1px solid black;
+  background-color: yellow; */
+  max-width: 100%;
 }
-
 .col-child {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
+  /* border: 1px solid black; */
+  width: 150px;
+  margin: 0px auto;
   text-align: left;
 }
-
-/* Table Styles */
-.table-container {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  overflow-x: auto;
+.exception {
+  width: 300px;
+}
+.exception2 {
+  min-width: 170px;
 }
 
-.tbl {
+.row {
   width: 100%;
-  max-width: 1200px;
-  margin: 20px 0;
+}
+.table-container {
+  height: auto;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+}
+.tbl {
+  /* border: 1px solid black; */
+
+  width: 100%;
+  margin: 20px 50px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
-  border-collapse: collapse;
 }
-
 .anchor {
   text-decoration: none;
   color: black;
-  display: block;
-  width: 100%;
-  height: 100%;
 }
-
 .tbl th {
   background-color: #ff6b6b;
   color: white;
@@ -271,206 +210,21 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
 .tbl tr:hover {
   background-color: #fff8f8;
   transform: scale(1.01);
 }
-
 .tbl td {
-  padding: 12px 15px;
+  padding: 12px 25px;
 }
-
 .tbl tr {
   transition: all 0.3s ease;
 }
-
 .tbl tr.no-hover {
   transform: none;
 }
-
 .tbl button {
   outline: none;
   border: none;
   background: transparent;
-  cursor: pointer;
-}
-
-/* Login Modal Styles */
-.form-control {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.btn-primary {
-  background-color: #d63031;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.form-text {
-  font-size: 12px;
-  color: #666;
-}
-
-.form-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-  display: block;
-}
-
-/* Responsive Media Queries */
-@media screen and (max-width: 1200px) {
-  .product-container {
-    grid-template-columns: repeat(3, 1fr);
-    width: 90%;
-  }
-
-  .featured-product-div {
-    max-width: 320px;
-  }
-
-  .featured-product-div-img,
-  .featured-product-div-title {
-    max-width: 300px;
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .product-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .search-container {
-    width: 90%;
-  }
-
-  .section-3-about {
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 500px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .nav-buttons {
-    gap: 10px;
-  }
-
-  .btn-cart,
-  .btn-login {
-    font-size: 14px;
-    padding: 6px 10px;
-  }
-
-  .search-bar {
-    height: 40px;
-    font-size: 14px;
-  }
-
-  .btn-search {
-    height: 40px;
-    font-size: 14px;
-  }
-
-  .banner-image {
-    height: 40vh;
-  }
-
-  .product-container {
-    width: 95%;
-  }
-
-  .featured-product-div {
-    height: 380px;
-  }
-
-  .featured-product-div-img {
-    height: 300px;
-  }
-
-  .section-3-about {
-    padding: 15px;
-  }
-
-  .section-3-about p {
-    font-size: 0.9rem;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .navigation-bar {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .nav-buttons {
-    margin: 10px 0;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .search-container {
-    width: 95%;
-  }
-
-  .search-form {
-    flex-direction: column;
-  }
-
-  .search-bar {
-    width: 100%;
-    border-radius: 5px 5px 0 0;
-  }
-
-  .btn-search {
-    width: 100%;
-    border-radius: 0 0 5px 5px;
-  }
-
-  .product-container {
-    grid-template-columns: 1fr;
-  }
-
-  .featured-product-div,
-  .featured-product-div-img,
-  .featured-product-div-title {
-    margin: 0 auto;
-  }
-
-  .section-3-about {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-    max-width: none;
-    width: 90%;
-    margin: 20px auto;
-    background-color: white;
-  }
-
-  #banner1 {
-    max-height: 30vh;
-  }
-
-  .tbl td,
-  .tbl th {
-    padding: 8px;
-  }
-
-  .logincontainer {
-    width: 95%;
-    padding: 15px 0;
-  }
-
-  .logincontainer form {
-    padding: 20px 15px;
-  }
 }
