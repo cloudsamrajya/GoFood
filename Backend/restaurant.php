@@ -70,7 +70,7 @@ $restaurant_food_item = $stmt -> fetchAll();
             <td><span style="color: <?php echo ($r_f_i['availability']=='Available') ? '#2ecc71':'#e74c3c' ?> "><?php echo $r_f_i['availability'] ?></span>  </td>
             <td ><button class="btn btn-sm btn-primary add-to-cart"
              data-food-id = "<?php echo $r_f_i['food_id']?>"
-             data-price = "<?php echo $r_f_i['price'] ?>"
+             data-price = "<?php echo $r_f_i['price'] ?>"  data-availability = "<?php echo $r_f_i['availability'] ?>"
              ><i class="bi bi-plus-lg"></i></button></td> 
         </tr>
         <?php endforeach ?>
@@ -86,6 +86,13 @@ $restaurant_food_item = $stmt -> fetchAll();
         $('.add-to-cart').click(function(){
             const foodid = $(this).data('food-id');
             const price = $(this).data('price');
+            const dataAvailability = $(this).data('availability');
+            if(dataAvailability === 'Unavailable'){
+                alert('item cant be added');
+                exit();
+            }
+            
+        
 
             $.ajax({
                 url: 'add_to_cart.php',

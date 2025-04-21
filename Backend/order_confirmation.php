@@ -17,9 +17,11 @@ $order_id = $_GET['order_id'];
 
 try{
     ///getting the order details
-    $stmt = $conn -> prepare("SELECT order_tbl.*, restaurant.name as restaurant_name FROM order_tbl JOIN restaurant ON order_tbl.restaurant_id = restaurant.restaurant_id WHERE order_tbl.order_id = ? AND order_tbl.user_id = ? AND order_tbl.status ='pending'");
+    $stmt = $conn -> prepare("SELECT order_tbl.*, restaurant.name as restaurant_name, user.address as user_address FROM order_tbl JOIN restaurant ON order_tbl.restaurant_id = restaurant.restaurant_id JOIN user ON order_tbl.user_id = user.user_id WHERE order_tbl.order_id = ? AND order_tbl.user_id = ? AND order_tbl.status ='pending'");
     $stmt -> execute([$order_id, $_SESSION['user_id']]);
     $order = $stmt -> fetch();
+
+    
 
     if(!$order){
         echo '<div class="container py-5"><div class ="alert alert-danger">Order not found</div></div>';
@@ -81,6 +83,10 @@ catch(PDOException $e){
                     <tr>
                         <th colspan="3">Subtotal</th>
                         <td class="text-end">Rs.<?php echo number_format($order['total_price'],2); ?></td>
+                    </tr>
+                    <tr>
+                        <th colspan="3">Delivering to </th>
+                        <td class="text-end"><?php echo htmlspecialchars($order['user_address']??'Address not available'); ?></td>
                     </tr>
                     <tr>
                         <th colspan="3">Delivery Fee</th>
