@@ -228,3 +228,465 @@
   border: none;
   background: transparent;
 }
+/* ----------------------------------------------------------------- */
+/* media queries for footer.php */
+
+/* Existing CSS stays unchanged */
+
+/* Responsive Footer Styles */
+@media screen and (max-width: 992px) {
+  .footer-container .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footer-container .col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 30px;
+  }
+
+  .col-child {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .exception {
+    width: 100%;
+  }
+
+  .exception2 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-footer {
+    padding-top: 20px;
+  }
+
+  .footer-container .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .col-child,
+  .exception,
+  .exception2 {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .footer-container li {
+    padding: 5px 0;
+  }
+
+  .footer-container h6 {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .col-child,
+  .exception,
+  .exception2 {
+    width: 90%;
+  }
+
+  .footer-container {
+    padding: 0 10px;
+  }
+}
+/* ----------------------------------------------------------------- */
+/* Responsive styles for index.php */
+
+/* Add margin to featured-product section */
+.featured-product {
+  margin-top: 30px;
+}
+
+/* For larger tablets and smaller desktops */
+@media screen and (max-width: 1200px) {
+  .product-container {
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .featured-product-div {
+    height: 380px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .featured-product-div-img {
+    height: 300px;
+    width: 100%;
+  }
+
+  .featured-product-div-title {
+    width: 100%;
+  }
+
+  .search-container {
+    width: 70%;
+  }
+
+  .section-3-about {
+    width: 400px;
+    transform: translate(-80%, -150%);
+  }
+}
+
+/* For tablets */
+@media screen and (max-width: 992px) {
+  .product-container {
+    width: 95%;
+    gap: 15px;
+  }
+
+  .section-3-about {
+    width: 350px;
+    transform: translate(-75%, -150%);
+  }
+
+  .search-container {
+    width: 80%;
+  }
+
+  /* Modal responsive */
+  .logincontainer {
+    width: 50%;
+    height: 85%;
+  }
+}
+
+/* For mobile tablets and large phones */
+@media screen and (max-width: 768px) {
+  .section-2 {
+    height: 40vh;
+  }
+
+  #banner1 {
+    height: 40vh;
+  }
+
+  .search-container {
+    width: 90%;
+  }
+
+  .search-bar {
+    height: 7vh;
+    font-size: 16px;
+  }
+
+  .btn-search {
+    height: 7vh;
+    font-size: 16px;
+  }
+
+  .product-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+    justify-items: center;
+  }
+
+  .featured-product-div {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .section-3-about {
+    width: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    text-align: center;
+  }
+
+  .section-3-about p {
+    font-size: 0.9rem !important;
+  }
+
+  /* Modal responsive */
+  .logincontainer {
+    width: 70%;
+    height: 80%;
+  }
+
+  /* Adjust margin for smaller screens */
+  .featured-product {
+    margin-top: 25px;
+  }
+}
+
+/* For smaller phones */
+@media screen and (max-width: 576px) {
+  .section-2 {
+    height: 30vh;
+  }
+
+  #banner1 {
+    height: 30vh;
+  }
+
+  .search-container {
+    width: 95%;
+  }
+
+  .search-bar {
+    height: 6vh;
+    font-size: 14px;
+    padding-left: 10px;
+  }
+
+  .btn-search {
+    height: 6vh;
+    font-size: 14px;
+    width: 40%;
+  }
+
+  .featured-product-div {
+    height: 350px;
+    padding: 5px;
+  }
+
+  .featured-product-div-img {
+    height: 270px;
+  }
+
+  .section-3-about {
+    width: 90%;
+    transform: translate(-50%, -90%);
+  }
+
+  .section-3-about p {
+    font-size: 0.8rem !important;
+  }
+
+  /* Modal responsive */
+  .logincontainer {
+    width: 90%;
+    height: 75%;
+  }
+
+  .logincontainer form {
+    padding: 20px 15px;
+  }
+
+  .register-div {
+    margin-top: 0.5rem;
+  }
+
+  /* Adjust margin for even smaller screens */
+  .featured-product {
+    margin-top: 120px;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 375px) {
+  .section-2 {
+    height: 25vh;
+    margin-bottom: 15vh;
+  }
+
+  .featured-product {
+    margin-top: 25px;
+  }
+
+  #banner1 {
+    height: 25vh;
+  }
+
+  .search-bar {
+    width: 65%;
+  }
+
+  .btn-search {
+    width: 35%;
+    font-size: 12px;
+  }
+
+  .section-3-about {
+    transform: translate(-50%, -85%);
+  }
+
+  .section-3-about p {
+    font-size: 0.7rem !important;
+  }
+  /* -------------------------------------------------------------------------- */
+} /* Responsive styles for header.php */
+
+/* Adjust the cart count badge position */
+#cart-count {
+  right: -5px !important;
+  top: -5px !important;
+}
+
+/* For larger tablets and smaller desktops */
+@media screen and (max-width: 1200px) {
+  .navigation-bar img {
+    height: 8vh;
+  }
+
+  .nav-buttons {
+    gap: 20px;
+  }
+
+  .btn-cart,
+  .btn-login,
+  .btn-logout {
+    font-size: 18px;
+    padding: 8px;
+  }
+}
+
+/* For tablets */
+@media screen and (max-width: 992px) {
+  .navigation-bar {
+    padding: 0 15px;
+  }
+
+  .navigation-bar img {
+    margin: 8px 0 8px 0;
+    height: 7vh;
+  }
+
+  .nav-buttons {
+    gap: 15px;
+  }
+
+  .btn-cart,
+  .btn-login,
+  .btn-logout {
+    font-size: 16px;
+    padding: 7px;
+  }
+}
+
+/* For mobile tablets and large phones */
+@media screen and (max-width: 768px) {
+  .navigation-bar {
+    padding: 0 10px;
+  }
+
+  .navigation-bar img {
+    height: 6vh;
+    margin: 8px 0;
+  }
+
+  .nav-buttons {
+    gap: 12px;
+    margin-right: 10px;
+  }
+
+  .btn-cart,
+  .btn-login,
+  .btn-logout {
+    font-size: 15px;
+    padding: 6px;
+  }
+}
+
+/* For smaller phones */
+@media screen and (max-width: 576px) {
+  .navigation-bar {
+    padding: 5px;
+  }
+
+  .navigation-bar img {
+    height: 5vh;
+    margin: 5px 0;
+  }
+
+  .nav-buttons {
+    gap: 8px;
+    margin-right: 5px;
+  }
+
+  .btn-cart,
+  .btn-login,
+  .btn-logout {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  /* Fix cart badge position for small screens */
+  #cart-count {
+    right: -7px !important;
+    top: -7px !important;
+    font-size: 0.65rem;
+    padding: 0.25em 0.5em;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 375px) {
+  .navigation-bar img {
+    height: 4.5vh;
+  }
+
+  .nav-buttons {
+    gap: 5px;
+  }
+
+  .btn-cart,
+  .btn-login,
+  .btn-logout {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  /* Cart icon size for very small screens */
+  .bi-cart3 {
+    font-size: 0.9em;
+  }
+}
+/* -----------------------------------this for the cart count-------------------------------------
+ */
+
+/* Cart badge positioning fix */
+.btn-cart {
+  position: relative !important; /* Force relative positioning */
+}
+
+#cart-count {
+  position: absolute !important; /* Force absolute positioning */
+  right: -8px !important; /* Position at the top right of the cart button */
+  top: -8px !important;
+  transform: none !important; /* Remove any transform */
+  z-index: 2; /* Ensure it's above other elements */
+}
+
+/* Add !important to override Bootstrap's position-absolute class */
+.position-absolute {
+  position: absolute !important;
+}
+
+/* Remove Bootstrap's translate-middle class effect */
+.translate-middle {
+  transform: none !important;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 576px) {
+  #cart-count {
+    right: -6px !important;
+    top: -6px !important;
+    font-size: 0.65rem;
+    padding: 0.25em 0.5em;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #cart-count {
+    right: -4px !important;
+    top: -4px !important;
+    font-size: 0.6rem;
+    padding: 0.2em 0.4em;
+  }
+}
+/* ---------------------------------------------------------------- */

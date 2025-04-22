@@ -2,16 +2,7 @@
 
 
 <link rel="stylesheet" href="../style.css">
-<style>
-  
-  #cart-count{
-    right: 100px;
-    top: 20px;
 
-
-
-  }
-</style>
 <?php
 $isLoggedIn = isset($_SESSION['user_id']);
 ?>

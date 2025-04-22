@@ -29,7 +29,7 @@ if(isset($_SESSION['message'])){
 
         <!-- Main content section starts -->
         <section class="section-2 ">
-      <img style="width: 100%; height: 50vh" src="../Images/banner3.jpg" alt="" />
+      <img class="black-banner" style="width: 100%; height: 50vh" src="../Images/banner3.jpg" alt="" />
       <div class="search-container">
         <form method="GET" action="search.php" class="search-form">
         <input type="text" name="query" class="search-bar" placeholder="Food or Restaurant" />
@@ -135,6 +135,7 @@ if(isset($_SESSION['message'])){
         </div>
       </div>
     </section>
+    
      <style>
        /* to stop the scroll when modal is open*/ 
         body.modal-open {
