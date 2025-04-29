@@ -53,6 +53,7 @@
 .section-2 {
   height: 50vh;
   /* background-color: #c44569; */
+  background: linear-gradient(180deg, #d13125, #e1ffea22 80%);
   width: auto;
   display: flex;
   justify-content: center;
